@@ -1,0 +1,15 @@
+{
+  "name": "react-analysis",
+  "version": "0.0.1",
+  "description": "react 源码分析",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "Analysis"
+  ],
+  "author": "memoryza(jincai.wang@foxmail.com)",
+  "license": "ISC"
+}

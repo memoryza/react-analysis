@@ -1,0 +1,7 @@
+#React源码分析系列
+
+###Object.assign
+
+React 能力引用之[Objec.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)，该方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。这里实现不复杂仅仅80多行实现了兼容性。
+
+当然无论js API提供任何能力都会有标准和实现的差异，如果仅仅是告诉我们API有就放心的用，那岂不是会被坑，既然是窥探代码就顺带看看object-assign源代码，源代码中利用shouldUseNative判断是否可以放心使用assign方法；shouldUseNative函数中做了从assign暴露出来以后包含的bug检测（当然bug的存在性、时效性这个就跟移动端浏览器版本更新一样，也许几个月以前你写出了一坨兼容性代码和给出了fixed方案，版本一更新这些都将成为过去，只能作为经验而已）,比如一个new String的对象后赋值的索引Index的getOwnPropertyNames被放在第0的位置这样类似的bug存在的情况下，都不会使用原生的assign方法，不看源码都不知道这类bugs。如果不支持则Polyfill去实现一个copy过程。

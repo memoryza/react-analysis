@@ -1,0 +1,2 @@
+React异常分为new Error中断执行的异常和console.error生成错误的提示。
+其中fbjs/lib/warning产生一个error的错误提示
