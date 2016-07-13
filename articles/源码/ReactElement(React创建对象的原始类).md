@@ -11,7 +11,7 @@ type: 一个既可以是html tag也可以是ReactClass的对象
 
 ref: 产生一个组件内对某个dom的一个引用,通过this.refs[refkey]返回HTMLElement
 
-key: 
+key: 在生产componentkey的时候有用，通过html tag包含key则获取componentkey(请参见traverseAllChildren)的时候将key escape(请参见KeyEscapeUtil),否则根据当前标签在父元素所在位置进行基于36进制的转码(a-z0-9)
 
 props: 开发者挂在标签上的属性都会被放到props，其中style会被解析到props.style的对象内，其中key,ref等为内部属性不会被分别赋值到type,ref中,其中内部属性如下
 
